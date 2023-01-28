@@ -3,6 +3,7 @@
 	import ImageInstancedMesh from './ImageInstancedMesh.svelte';
 	import data from '/src/data/positionsProcessed.json';
 	import * as knobby from 'svelte-knobby';
+	import { onMount } from 'svelte';
 
 	let mesh;
 
@@ -57,6 +58,10 @@
 
 		mesh.updatePositions(newPositions);
 	}
+
+  onMount(() => {
+    updatePositions('img2d')
+  })
 </script>
 
 <PerspectiveCamera position={{ x: 0, y: 0, z: 120 }}>
